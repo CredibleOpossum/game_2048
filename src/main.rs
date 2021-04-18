@@ -128,7 +128,6 @@ fn check_end(board: [[i32; 4]; 4]) -> bool {
     }
 }
 
-//? board[(index / 4) as usize][(index % 4) as usize] = num;
 fn main() {
     let mut board = [[0_i32; 4]; 4];
     add_two(&mut board);
