@@ -45,15 +45,15 @@ fn move_left(board: &[[i32; 4]; 4]) -> [[i32; 4]; 4] {
 }
 
 fn move_right(board: &[[i32; 4]; 4]) -> [[i32; 4]; 4] {
-    return reverse(&move_left(&reverse(board)));
+    return reverse(&move_left(&reverse(&board)));
 }
 
 fn move_up(board: &[[i32; 4]; 4]) -> [[i32; 4]; 4] {
-    return transpose(&move_left(&transpose(board)));
+    return transpose(&move_left(&transpose(&board)));
 }
 
 fn move_down(board: &[[i32; 4]; 4]) -> [[i32; 4]; 4] {
-    return transpose(&move_right(&transpose(board)));
+    return transpose(&move_right(&transpose(&board)));
 }
 
 fn score(board: &[[i32; 4]; 4]) -> i32 {
