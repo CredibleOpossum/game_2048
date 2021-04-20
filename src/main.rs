@@ -6,7 +6,8 @@ use text_io::read;
 
 fn main() {
     let mut board = [[0_i32; 4]; 4];
-    random_two(&mut board, 2);
+    random_two(&mut board);
+    random_two(&mut board);
     loop {
         print_board(&board);
         println!("{}", score(&board));
@@ -20,7 +21,7 @@ fn main() {
         };
         if future_board != board {
             board = future_board;
-            random_two(&mut board, 1);
+            random_two(&mut board);
             if check_end(board) {
                 println!("No more possible moves, game has ended.");
                 println!("Final score: {}", score(&board));
@@ -137,10 +138,8 @@ fn random_two(board: &mut [[i32; 4]; 4], amount: i32) {
             }
         }
     }
-    for _ in 0..amount {
-        if free_spaces.len() != 0 {
-            let random_position = free_spaces.choose(&mut rand::thread_rng()).unwrap();
-            board[random_position[0]][random_position[1]] = 2;
-        }
+    if free_spaces.len() != 0 {
+        let random_position = free_spaces.choose(&mut rand::thread_rng()).unwrap();
+        board[random_position[0]][random_position[1]] = 2;
     }
 }
