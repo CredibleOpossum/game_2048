@@ -129,7 +129,7 @@ fn transpose(board: &[[i32; 4]; 4]) -> [[i32; 4]; 4] {
     return new_board;
 }
 
-fn random_two(board: &mut [[i32; 4]; 4], amount: i32) {
+fn random_two(board: &mut [[i32; 4]; 4]) {
     let mut free_spaces = Vec::new();
     for col in 0..4 {
         for row in 0..4 {
