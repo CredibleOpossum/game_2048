@@ -120,7 +120,7 @@ fn reverse(board: &[[i32; 4]; 4]) -> [[i32; 4]; 4] {
 }
 
 fn transpose(board: &[[i32; 4]; 4]) -> [[i32; 4]; 4] {
-    let mut new_board = *board;
+    let mut new_board = [[0; 4]; 4];
     for col in 0..4 {
         for row in 0..4 {
             new_board[row][col] = board[col][row];
